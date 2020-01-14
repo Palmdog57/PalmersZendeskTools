@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "Palmers Tools",
+    "version": "0.1",
+    "content_scripts": [
+      {
+        "matches": ["https://*.zendesk.com/agent/*"],
+        "js": ["jquery-3.4.1.slim.min.js", "popper.min.js", "bootstrap.min.js", "35eef1d9a5.js", "content.js"]
+      }],
+    
+    "permissions" : [
+        "tabs", "activeTab", "contextMenus", "\u003Call_urls>", "storage", "clipboardWrite", "clipboardRead"
+    ],
+
+    "background" : {
+        "scripts": [ "background.js" ]
+    },
+
+    "options_page" : "PalmersTools.html",
+
+    "content_security_policy": "script-src 'self' 'unsafe-eval' https://kit.fontawesome.com/; object-src 'self'"
+  }
