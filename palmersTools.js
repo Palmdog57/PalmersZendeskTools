@@ -51,12 +51,10 @@ function save_responses() {
         let currentKey = entry;
         let currentValue = items[entry];
 
-        var fuckYou = JSON.parse(items);
+        var fuckYou = JSON.parse(JSON.stringify(items));
         console.log(typeof(fuckYou));
 
-        var responseObject = {resName : resBody}
-  
-        currentValue.push(responseObject);
+        var responseObject = {resName : resBody};
     
         chrome.storage.sync.set({
           responses: responseObject
